@@ -5,17 +5,17 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int sum = readInt("amount —> ");
-        int price1 = readInt("price of 1 cake —> ");
-        int num1 = readInt("number of 1 cakes —> ");
-        int price2 = readInt("price of 2 cake —> ");
-        int num2 = readInt("number of 2 cakes —> ");
+        int sum = readMoney("amount —> ");
+        int price1 = readMoney("price of 1 cake —> ");
+        int num1 = readMoney("number of 1 cakes —> ");
+        int price2 = readMoney("price of 2 cake —> ");
+        int num2 = readMoney("number of 2 cakes —> ");
 
-        CheapCake1(price1, price2, sum, num1, num2);
-        CheapCake2(price1, price2, sum, num1, num2);
+        checkCake1(price1, price2, sum, num1, num2);
+        checkCake2(price1, price2, sum, num1, num2);
     }
 
-    private static void CheapCake1 (int price1, int price2, int sum, int num1, int num2) {
+    private static void checkCake1 (int price1, int price2, int sum, int num1, int num2) {
         // Remaining balance
         int bal;
 
@@ -43,7 +43,7 @@ public class Main {
         }
     }
 
-    private static void CheapCake2 (int price1, int price2, int sum, int num1, int num2) {
+    private static void checkCake2 (int price1, int price2, int sum, int num1, int num2) {
         // Remaining balance
         int bal;
 
@@ -72,7 +72,7 @@ public class Main {
     }
 
 
-    public static int readInt(String name) {
+    public static int readMoney(String name) {
         System.out.printf("Enter the %s", name);
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
