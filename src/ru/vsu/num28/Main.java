@@ -1,4 +1,4 @@
-package com.compan.num28;
+package ru.vsu.num28;
 
 import java.util.Scanner;
 
