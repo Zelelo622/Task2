@@ -6,35 +6,35 @@ public class Main {
 
     public static void main(String[] args) {
         int sum = readingMoneyAndCakeAmount("amount —> ");
-        int price1 = readingMoneyAndCakeAmount("price of 1 cake —> ");
-        int quantity1 = readingMoneyAndCakeAmount("number of 1 cakes —> ");
-        int price2 = readingMoneyAndCakeAmount("price of 2 cake —> ");
-        int quantity2 = readingMoneyAndCakeAmount("number of 2 cakes —> ");
+        int priceCake1 = readingMoneyAndCakeAmount("price of 1 cake —> ");
+        int numberCakes1 = readingMoneyAndCakeAmount("number of 1 cakes —> ");
+        int priceCake2 = readingMoneyAndCakeAmount("price of 2 cake —> ");
+        int numberCakes2 = readingMoneyAndCakeAmount("number of 2 cakes —> ");
 
-        checkingTheCostOfCake1(price1, price2, sum, quantity1, quantity2);
-        checkingTheCostOfCake2(price1, price2, sum, quantity1, quantity2);
+        checkingTheCostOfCake1(priceCake1, priceCake2, sum, numberCakes1, numberCakes2);
+        checkingTheCostOfCake2(priceCake1, priceCake2, sum, numberCakes1, numberCakes2);
     }
 
-    private static void checkingTheCostOfCake1(int price1, int price2, int sum, int quantity1, int quantity2) {
+    private static void checkingTheCostOfCake1(int priceCake1, int priceCake2, int sum, int numberCakes1, int numberCakes2) {
         // Remaining balance
         int bal;
 
-        int price = Math.min(price1, price2);
+        int price = Math.min(priceCake1, priceCake2);
 
-        if (price == price1) {
-            if (sum >= price && sum <= price * quantity1) {
+        if (price == priceCake1) {
+            if (sum >= price && sum <= price * numberCakes1) {
                 System.out.print("You bought —> ");
                 bal = sum / price;
                 System.out.println(bal);
             }
-            if (sum > price * quantity1 && sum <= price * quantity1 + price2 * quantity2) {
+            if (sum > price * numberCakes1 && sum <= price * numberCakes1 + priceCake2 * numberCakes2) {
                 System.out.print("You bought —> ");
-                bal = quantity1 + ((sum - price * quantity1) / price2);
+                bal = numberCakes1 + ((sum - price * numberCakes1) / priceCake2);
                 System.out.println(bal);
             }
-            if (sum > price * quantity1 + price2 * quantity2) {
+            if (sum > price * numberCakes1 + priceCake2 * numberCakes2) {
                 System.out.print("You bought —> ");
-                bal = quantity1 + quantity2;
+                bal = numberCakes1 + numberCakes2;
                 System.out.println(bal);
             }
             if (sum < price) {
@@ -43,29 +43,29 @@ public class Main {
         }
     }
 
-    private static void checkingTheCostOfCake2(int price1, int price2, int sum, int quantity1, int quantity2) {
+    private static void checkingTheCostOfCake2(int priceCake1, int priceCake2, int sum, int numberCakes1, int numberCakes2) {
         // Remaining balance
         int bal;
 
-        int price = Math.min(price1, price2);
+        int price = Math.min(priceCake1, priceCake2);
 
-        if (price == price2) {
+        if (price == priceCake2) {
             if (sum < price) {
                 System.out.println("You won't buy anything");
             }
-            if (sum >= price && sum <= price * quantity2) {
+            if (sum >= price && sum <= price * numberCakes2) {
                 System.out.print("You bought --> ");
                 bal = sum / price;
                 System.out.println(bal);
             }
-            if (sum > price * quantity2 && sum <= price * quantity2 + price1 * quantity1) {
+            if (sum > price * numberCakes2 && sum <= price * numberCakes2 + priceCake1 * numberCakes1) {
                 System.out.print("You bought --> ");
-                bal = quantity2 + ((sum - price * quantity2) / price1);
+                bal = numberCakes2 + ((sum - price * numberCakes2) / priceCake1);
                 System.out.println(bal);
             }
-            if (sum > price * quantity2 + price1 * quantity1) {
+            if (sum > price * numberCakes2 + priceCake1 * numberCakes1) {
                 System.out.print("You bought --> ");
-                bal = quantity1 + quantity2;
+                bal = numberCakes1 + numberCakes2;
                 System.out.println(bal);
             }
         }
