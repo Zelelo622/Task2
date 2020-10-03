@@ -12,7 +12,7 @@ public class Main {
         int numberCakes2 = readingMoneyAndCakeAmount("number of 2 cakes —> ");
 
         checkingTheCostOfCake1(priceCake1, priceCake2, sum, numberCakes1, numberCakes2);
-        checkingTheCostOfCake2(priceCake1, priceCake2, sum, numberCakes1, numberCakes2);
+        checkingTheCostOfCake1(priceCake2, priceCake1, sum, numberCakes2, numberCakes1);
     }
 
     private static void checkingTheCostOfCake1(int priceCake1, int priceCake2, int sum, int numberCakes1, int numberCakes2) {
@@ -42,35 +42,6 @@ public class Main {
             }
         }
     }
-
-    private static void checkingTheCostOfCake2(int priceCake1, int priceCake2, int sum, int numberCakes1, int numberCakes2) {
-        // Remaining balance
-        int bal;
-
-        int price = Math.min(priceCake1, priceCake2);
-
-        if (price == priceCake2) {
-            if (sum < price) {
-                System.out.println("You won't buy anything");
-            }
-            if (sum >= price && sum <= price * numberCakes2) {
-                System.out.print("You bought --> ");
-                bal = sum / price;
-                System.out.println(bal);
-            }
-            if (sum > price * numberCakes2 && sum <= price * numberCakes2 + priceCake1 * numberCakes1) {
-                System.out.print("You bought --> ");
-                bal = numberCakes2 + ((sum - price * numberCakes2) / priceCake1);
-                System.out.println(bal);
-            }
-            if (sum > price * numberCakes2 + priceCake1 * numberCakes1) {
-                System.out.print("You bought --> ");
-                bal = numberCakes1 + numberCakes2;
-                System.out.println(bal);
-            }
-        }
-    }
-
 
     static int readingMoneyAndCakeAmount(String name) {
         System.out.printf("Enter the %s", name);
