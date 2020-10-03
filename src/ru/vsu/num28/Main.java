@@ -11,11 +11,11 @@ public class Main {
         int priceCake2 = readingMoneyAndCakeAmount("price of 2 cake —> ");
         int numberCakes2 = readingMoneyAndCakeAmount("number of 2 cakes —> ");
 
-        checkingTheCostOfCake1(priceCake1, priceCake2, sum, numberCakes1, numberCakes2);
-        checkingTheCostOfCake1(priceCake2, priceCake1, sum, numberCakes2, numberCakes1);
+        checkingTheCostOfCake(priceCake1, priceCake2, sum, numberCakes1, numberCakes2);
+        checkingTheCostOfCake(priceCake2, priceCake1, sum, numberCakes2, numberCakes1);
     }
 
-    private static void checkingTheCostOfCake1(int priceCake1, int priceCake2, int sum, int numberCakes1, int numberCakes2) {
+    private static void checkingTheCostOfCake(int priceCake1, int priceCake2, int sum, int numberCakes1, int numberCakes2) {
         // Remaining balance
         int bal;
 
