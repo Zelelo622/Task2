@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class Cake {
 
     public static void main(String[] args) {
-        int sum = readMoneyOrCakeAmount("amount —> ");
-        int priceCake1 = readMoneyOrCakeAmount("price of 1 cake —> ");
-        int numberCakes1 = readMoneyOrCakeAmount("number of 1 cakes —> ");
-        int priceCake2 = readMoneyOrCakeAmount("price of 2 cake —> ");
-        int numberCakes2 = readMoneyOrCakeAmount("number of 2 cakes —> ");
+        int sum = readInteger("amount —> ");
+        int priceCake1 = readInteger("price of 1 cake —> ");
+        int numberCakes1 = readInteger("number of 1 cakes —> ");
+        int priceCake2 = readInteger("price of 2 cake —> ");
+        int numberCakes2 = readInteger("number of 2 cakes —> ");
         int bal1 = checkTheCostOfCake(priceCake1, priceCake2, sum, numberCakes1, numberCakes2);
         int bal2 = checkTheCostOfCake(priceCake2, priceCake1, sum, numberCakes2, numberCakes1);
         int bal = Math.max(bal1, bal2);
@@ -38,7 +38,7 @@ public class Cake {
         System.out.print("You bought —> " + bal);
     }
 
-    static int readMoneyOrCakeAmount(String name) {
+    static int readInteger(String name) {
         System.out.printf("Enter the %s", name);
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
