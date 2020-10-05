@@ -14,7 +14,7 @@ public class Cake {
         int bal2 = determineNumberCakes(priceCake2, priceCake1, sum, numberCakes2, numberCakes1);
         int bal = Math.max(bal1, bal2);
 
-        printNumberOfPurchasedCakes(bal);
+        printNumberPurchasedCakes(bal);
     }
 
     public static int determineNumberCakes(int priceCake1, int priceCake2, int sum, int numberCakes1, int numberCakes2) {
@@ -34,7 +34,7 @@ public class Cake {
         return 0;
     }
 
-    static void printNumberOfPurchasedCakes(int bal) {
+    static void printNumberPurchasedCakes(int bal) {
         System.out.print("You bought —> " + bal);
     }
 
