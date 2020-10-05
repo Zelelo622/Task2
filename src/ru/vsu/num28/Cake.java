@@ -10,14 +10,14 @@ public class Cake {
         int numberCakes1 = readInteger("number of 1 cakes —> ");
         int priceCake2 = readInteger("price of 2 cake —> ");
         int numberCakes2 = readInteger("number of 2 cakes —> ");
-        int bal1 = checkCostOfCake(priceCake1, priceCake2, sum, numberCakes1, numberCakes2);
-        int bal2 = checkCostOfCake(priceCake2, priceCake1, sum, numberCakes2, numberCakes1);
+        int bal1 = determineNumberCakes(priceCake1, priceCake2, sum, numberCakes1, numberCakes2);
+        int bal2 = determineNumberCakes(priceCake2, priceCake1, sum, numberCakes2, numberCakes1);
         int bal = Math.max(bal1, bal2);
 
         printNumberOfPurchasedCakes(bal);
     }
 
-    public static int checkCostOfCake(int priceCake1, int priceCake2, int sum, int numberCakes1, int numberCakes2) {
+    public static int determineNumberCakes(int priceCake1, int priceCake2, int sum, int numberCakes1, int numberCakes2) {
         int price = Math.min(priceCake1, priceCake2);
 
         if (price == priceCake1) {
@@ -34,7 +34,7 @@ public class Cake {
         return 0;
     }
 
-    static void printNumberOfPurchasedCakes(int bal){
+    static void printNumberOfPurchasedCakes(int bal) {
         System.out.print("You bought —> " + bal);
     }
 
