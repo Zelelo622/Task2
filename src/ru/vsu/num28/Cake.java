@@ -50,13 +50,13 @@ public class Cake {
         return sum > price * numberCakes1 + priceCake2 * numberCakes2;
     }
 
-    static void printNumberPurchasedCakes(int bal) {
-        System.out.print("You bought —> " + bal);
-    }
-
     static int readInteger(String name) {
         System.out.printf("Enter the %s", name);
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
+    }
+
+    static void printNumberPurchasedCakes(int bal) {
+        System.out.print("You bought —> " + bal);
     }
 }
