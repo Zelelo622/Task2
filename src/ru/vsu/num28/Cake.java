@@ -15,13 +15,13 @@ public class Cake {
         printNumberPurchasedCakes(bal);
     }
 
-    public static int minMaxCostCake(int priceCake1, int priceCake2, int sum, int numberCakes1, int numberCakes2) {
+    private static int minMaxCostCake(int priceCake1, int priceCake2, int sum, int numberCakes1, int numberCakes2) {
         int bal1 = determineNumberCakes(priceCake1, priceCake2, sum, numberCakes1, numberCakes2);
         int bal2 = determineNumberCakes(priceCake2, priceCake1, sum, numberCakes2, numberCakes1);
         return Math.max(bal1, bal2);
     }
 
-    public static int determineNumberCakes(int priceCake1, int priceCake2, int sum, int numberCakes1, int numberCakes2) {
+    private static int determineNumberCakes(int priceCake1, int priceCake2, int sum, int numberCakes1, int numberCakes2) {
         int price = Math.min(priceCake1, priceCake2);
 
         if (price == priceCake1) {
